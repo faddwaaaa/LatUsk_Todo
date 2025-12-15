@@ -21,6 +21,12 @@ $kategori = mysqli_query($koneksi, "SELECT * FROM category")
     <title>Edit TodoList</title>
 </head>
 <body>
+    <nav>
+        <a href="index.php">TodoList</a>
+        <a href="profil.php">Profil</a>
+        <a href="logout.php">Logout</a>
+    </nav>
+    
     <h3>Edit TodoList</h3>
     <form action="proses_edit.php" method="post">
         <input type="hidden" name="id_todo" value="<?= $t['id_todo'] ?>">
@@ -49,4 +55,5 @@ $kategori = mysqli_query($koneksi, "SELECT * FROM category")
         <button type="submit">Edit</button>
     </form>
 </body>
+
 </html>
