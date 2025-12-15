@@ -18,6 +18,12 @@ $kategori = mysqli_query($koneksi, "SELECT * FROM category");
     <title>Tambah TodoList</title>
 </head>
 <body>
+    <nav>
+        <a href="index.php">TodoList</a>
+        <a href="profil.php">Profil</a>
+        <a href="logout.php">Logout</a>
+    </nav>
+    
     <h3>Tambah TodoList</h3>
     <form action="proses_tambah.php" method="post">
         <label for="">Judul</label>
@@ -45,4 +51,5 @@ $kategori = mysqli_query($koneksi, "SELECT * FROM category");
         <button type="submit">Tambah</button>
     </form>
 </body>
+
 </html>
