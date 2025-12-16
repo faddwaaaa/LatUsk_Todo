@@ -52,3 +52,20 @@ button:hover { opacity: 0.9; }
 .form-box button { width: 100%; background: #10b981; }
 
 /* PRINT */ @media print { nav, button, form, a { display: none; } body { background: #fff; } }
+
+
+<div class="todo-wrapper">
+<?php while($todo = mysqli_fetch_assoc($query)) { ?>
+  <div class="todo-card <?= $todo['status']=='Done'?'done':'' ?>">
+    <h4><?= $todo['title'] ?></h4>
+    <small><?= $todo['description'] ?></small>
+    <p>Kategori: <?= $todo['nama_kategori'] ?></p>
+    <p>Status: <?= $todo['status'] ?></p>
+
+    <div class="todo-action">
+      <a href="edit.php?id_todo=<?= $todo['id_todo'] ?>" class="edit">Edit</a>
+      <a href="hapus.php?id_todo=<?= $todo['id_todo'] ?>" class="hapus">Hapus</a>
+    </div>
+  </div>
+<?php } ?>
+</div>
